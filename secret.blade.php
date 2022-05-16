@@ -358,7 +358,7 @@
 					
 					<h4 style="border-bottom: solid 1px #DDE3F5;padding-bottom: 8px; margin-bottom: 15px;">Theo dõi trạng thái đơn hàng</h4>
 					<div class="timeline">
-						@for ($i = 0; $i < count($data->actionLogs); $i++)
+						@for ($i = count($data->actionLogs)-1; $i >=0 ; $i--)
 							<div class="timeline-step-knob"></div>
 						  <div class="timeline-step-title">
 							<h5>{{$data->actionLogs[$i]->timestamp?Carbon\Carbon::parse($data->actionLogs[$i]->timestamp)->format('h:i m/d/Y'):'Không xác định'}}</h5>
@@ -427,7 +427,7 @@
 							@if ( $data->actionLogs[$i]->videoUrls == NULL || count($data->actionLogs[$i]->videoUrls) <= 0)
 								<span class="processing-tag">Đang cập nhật</span>
 							@else
-							<button class="timeline-step-video-btn" onclick='showVideoDialog("{{$data->actionLogs[$i]->sessionType?$data->actionLogs[$i]->sessionType:100}}",{!! json_encode($data->actionLogs[$i]->videoUrls) !!})'>
+							<button class="timeline-step-video-btn" onclick='showVideoDialog({{$data->actionLogs[$i]->sessionType?$data->actionLogs[$i]->sessionType:100}},{!! json_encode($data->actionLogs[$i]->videoUrls) !!})'>
 								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 467.968 467.968" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
 									<g xmlns="http://www.w3.org/2000/svg">
 										<g>

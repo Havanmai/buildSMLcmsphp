@@ -531,6 +531,7 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", function(event) { 
 			  //do work
+			  if(document.getElementById("qrcode")){
 			  new QRCode(document.getElementById("qrcode"), {
 					text: "{{$qrCode}}",
 					width: 240,
@@ -539,7 +540,7 @@
 					colorLight : "#ffffff",
 					correctLevel : QRCode.CorrectLevel.H
 				});
-				
+			  }
 			
 			 //Countdown timmer 
 			 var countDownDate = new Date("{{$data->expires}}").getTime();

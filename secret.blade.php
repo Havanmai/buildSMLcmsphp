@@ -541,6 +541,8 @@
 					correctLevel : QRCode.CorrectLevel.H
 				});
 			  }
+			  
+			 if(document.getElementById("countdown")){
 			
 			 //Countdown timmer 
 			 var countDownDate = new Date("{{$data->expires}}").getTime();
@@ -563,7 +565,7 @@
 			  // Display the result in the element with id="demo"
 			  document.getElementById("countdown").innerHTML = days + "ngày - " + hours + ":"
 			  + minutes + ":" + seconds + "giây ";
-
+			}
 			  // If the count down is finished, write some text
 			  if (distance < 0) {
 				clearInterval(x);

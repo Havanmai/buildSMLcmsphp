@@ -265,10 +265,11 @@
 					</span>
 					{{$data->cabinetTitle}} / {{$data->cabinetCode}}
 				</h3>
-				<div style="margin: 4px 0px 20px 0px;padding:0px 25px;">{{$data->cabinetAddress}}</div>
+				<!--<div style="margin: 4px 0px 20px 0px;padding:0px 25px;">{{$data->cabinetAddress}}</div>-->
+				<div style="margin: 4px 0px 20px 0px;padding:0px 50px;">Tòa nhà Viettel, lô D26 Khu đô thị mới Cầu Giấy, Hà Nội</div>
 			</div>
 			<div style="background-color:#ffffff; border-radius:10px; margin: 0px 15px; padding:20px;">
-				<div style="margin-bottom: 8px;">
+				<!--<div style="margin-bottom: 8px;">
 					Trạng thái : 
 						@switch($data->orderStatus)
 						@case(0) 
@@ -306,7 +307,7 @@
 							@break;
 							
 					@endswitch
-				</div>
+				</div>-->
 				@switch($data->orderStatus)
 						@case(0)
 						@case(1) 
@@ -346,7 +347,7 @@
 					@endswitch
 						
 					</div>
-					<div><span class="left-item">Người gửi</span>:<div class="right-item">{{$data->sender?$data->sender:'-'}}</div></div>
+					<!--<div><span class="left-item">Người gửi</span>:<div class="right-item">{{$data->sender?$data->sender:'-'}}</div></div>
 					<div><span class="left-item">SĐT</span>:<div class="right-item">{{$data->senderPhoneNumber?$data->senderPhoneNumber:'-'}}</div></div>
 					<div><span class="left-item">Địa chỉ</span>:<div class="right-item">{{$data->senderAddress?$data->senderAddress:'-'}}</div></div>
 					<div><span class="left-item" style="width:auto;">Đơn vị vận chuyển</span>:<div class="right-item">{{$data->partnerName?$data->partnerName:'-'}}</div></div>
@@ -358,7 +359,7 @@
 					
 					<h4 style="border-bottom: solid 1px #DDE3F5;padding-bottom: 8px; margin-bottom: 15px;">Theo dõi trạng thái đơn hàng</h4>
 					<div class="timeline">
-						@for ($i = count($data->actionLogs)-1; $i >=0 ; $i--)
+						@for ($i = 0; $i < count($data->actionLogs); $i++)
 							<div class="timeline-step-knob"></div>
 						  <div class="timeline-step-title">
 							<h5>{{$data->actionLogs[$i]->timestamp?Carbon\Carbon::parse($data->actionLogs[$i]->timestamp)->format('h:i m/d/Y'):'Không xác định'}}</h5>
@@ -477,7 +478,7 @@
 						@endfor
 					  
 					  <div class="timeline-line"></div>
-					</div>
+					</div>-->
 					<div>
 					<div style="height: 1px; margin: 15px auto 15px auto;border-bottom: solid 1px #DDE3F5;">&nbsp;</div>
 					
@@ -531,7 +532,6 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", function(event) { 
 			  //do work
-			  if(document.getElementById("qrcode")){
 			  new QRCode(document.getElementById("qrcode"), {
 					text: "{{$qrCode}}",
 					width: 240,
@@ -540,42 +540,37 @@
 					colorLight : "#ffffff",
 					correctLevel : QRCode.CorrectLevel.H
 				});
+				
+			
+			 //Countdown timmer 
+			 var countDownDate = new Date("{{$data->expires}}").getTime();
+
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+			  // Get today's date and time
+			  var now = new Date().getTime();
+
+			  // Find the distance between now and the count down date
+			  var distance = countDownDate - now;
+
+			  // Time calculations for days, hours, minutes and seconds
+			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			  // Display the result in the element with id="demo"
+			  document.getElementById("countdown").innerHTML = days + "ngày - " + hours + ":"
+			  + minutes + ":" + seconds + "giây ";
+
+			  // If the count down is finished, write some text
+			  if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("countdown").innerHTML = "Đã Quá Hạn";
 			  }
-			  
-			 if(document.getElementById("countdown")){
-			
-				//Countdown timmer 
-				 var countDownDate = new Date("{{$data->expires}}").getTime();
-
-				// Update the count down every 1 second
-				var x = setInterval(function() {
-
-				  // Get today's date and time
-					  var now = new Date().getTime();
-
-					  // Find the distance between now and the count down date
-					  var distance = countDownDate - now;
-
-					  // Time calculations for days, hours, minutes and seconds
-					  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-					  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-					  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-					  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-					  // Display the result in the element with id="demo"
-					  document.getElementById("countdown").innerHTML = days + "ngày - " + hours + ":"
-					  + minutes + ":" + seconds + "giây ";
-					
-					 
-					  // If the count down is finished, write some text
-					  if (distance < 0) {
-						clearInterval(x);
-						document.getElementById("countdown").innerHTML = "Đã Quá Hạn";
-					  }
-				}, 1000);
-			 }
+			}, 1000);
 			});
-			
 			
 			var modal = document.getElementById("myModal");
 			var span = document.getElementsByClassName("close")[0];

@@ -265,11 +265,11 @@
 					</span>
 					{{$data->cabinetTitle}} / {{$data->cabinetCode}}
 				</h3>
-				<!--<div style="margin: 4px 0px 20px 0px;padding:0px 25px;">{{$data->cabinetAddress}}</div>-->
-				<div style="margin: 4px 0px 20px 0px;padding:0px 50px;">Tòa nhà Viettel, lô D26 Khu đô thị mới Cầu Giấy, Hà Nội</div>
+				<div style="margin: 4px 0px 20px 0px;padding:0px 25px;">{{$data->cabinetAddress}}</div>
+				
 			</div>
 			<div style="background-color:#ffffff; border-radius:10px; margin: 0px 15px; padding:20px;">
-				<!--<div style="margin-bottom: 8px;">
+				<div style="margin-bottom: 8px;">
 					Trạng thái : 
 						@switch($data->orderStatus)
 						@case(0) 
@@ -307,7 +307,7 @@
 							@break;
 							
 					@endswitch
-				</div>-->
+				</div>
 				@switch($data->orderStatus)
 						@case(0)
 						@case(1) 
@@ -347,7 +347,7 @@
 					@endswitch
 						
 					</div>
-					<!--<div><span class="left-item">Người gửi</span>:<div class="right-item">{{$data->sender?$data->sender:'-'}}</div></div>
+					<div><span class="left-item">Người gửi</span>:<div class="right-item">{{$data->sender?$data->sender:'-'}}</div></div>
 					<div><span class="left-item">SĐT</span>:<div class="right-item">{{$data->senderPhoneNumber?$data->senderPhoneNumber:'-'}}</div></div>
 					<div><span class="left-item">Địa chỉ</span>:<div class="right-item">{{$data->senderAddress?$data->senderAddress:'-'}}</div></div>
 					<div><span class="left-item" style="width:auto;">Đơn vị vận chuyển</span>:<div class="right-item">{{$data->partnerName?$data->partnerName:'-'}}</div></div>
@@ -478,7 +478,7 @@
 						@endfor
 					  
 					  <div class="timeline-line"></div>
-					</div>-->
+					</div>
 					<div>
 					<div style="height: 1px; margin: 15px auto 15px auto;border-bottom: solid 1px #DDE3F5;">&nbsp;</div>
 					

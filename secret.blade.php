@@ -359,7 +359,7 @@
 					
 					<h4 style="border-bottom: solid 1px #DDE3F5;padding-bottom: 8px; margin-bottom: 15px;">Theo dõi trạng thái đơn hàng</h4>
 					<div class="timeline">
-						@for ($i = 0; $i < count($data->actionLogs); $i++)
+						@for ($i = (count($data->actionLogs) - 1); $i >= 0 ; $i--)
 							<div class="timeline-step-knob"></div>
 						  <div class="timeline-step-title">
 							<h5>{{$data->actionLogs[$i]->timestamp?Carbon\Carbon::parse($data->actionLogs[$i]->timestamp)->format('h:i m/d/Y'):'Không xác định'}}</h5>

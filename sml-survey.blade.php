@@ -6,6 +6,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta property="og:title" content="Bưu Chính Viettel">
   <meta property="og:description" content="vietteltpost cam kết giao hàng nhanh, giao hàng tiết kiệm uy tín nhất Việt Nam">
+  <style>
+		body {overflow: hidden;}
+  </style>
 <body>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfnfjsKW03RLcZhfCpdsHKx1KR3wlRK0lAf7Xy7oCS2BkHfIw/viewform?embedded=true" style="width:100%;height:100vh;" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>SmartLocker CMS - Bưu Chính Viettel</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta property="og:title" content="Bưu Chính Viettel">
+  <meta property="og:description" content="vietteltpost cam kết giao hàng nhanh, giao hàng tiết kiệm uy tín nhất Việt Nam">
+<body>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfnfjsKW03RLcZhfCpdsHKx1KR3wlRK0lAf7Xy7oCS2BkHfIw/viewform?embedded=true" width="640" height="1479" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232210568-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-232210568-1');
+</script>
+</body></html>

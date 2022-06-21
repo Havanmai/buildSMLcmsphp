@@ -21,7 +21,9 @@ Route::get('/getcode/{id}','App\Http\Controllers\SecretController@render');
 Route::get('/survey/sml',function () {
     return view('sml-survey');
 });
-
+Route::get('/survey/shop',function () {
+    return view('shop-survey');
+});
 Route::any('/{any}', function () {
     return view('cms');
 })->where('any', '.*');;
